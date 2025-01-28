@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Grading System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Code Grading System</h3>
+        <form method="post">
+            <label for="context">Context</label>
+            <input type="text" id="context" name="context" placeholder="Specify the context here..." required>
+            
+            <label for="code">Code</label>
+            <textarea id="code" name="code" rows="10" placeholder="Paste your code here..." required></textarea>
+            
+            <input type="submit" value="Grade Code">
+        </form>
+        {% if grade %}
+            <div class="result {{ grade_class }}">
+                <strong>Grade:</strong> {{ grade }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
